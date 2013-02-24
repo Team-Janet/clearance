@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 module Clearance
-  module User
+  module Model
     extend ActiveSupport::Concern
 
     included do
@@ -10,8 +10,10 @@ module Clearance
 
       include Validations
       include Callbacks
-      include (Clearance.configuration.password_strategy ||
-        Clearance::PasswordStrategies::BCrypt)
+      include (
+        Clearance.configuration.password_strategy ||
+        Clearance::PasswordStrategies::BCrypt
+      )
     end
 
     module ClassMethods

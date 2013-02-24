@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Clearance::User do
+describe Clearance::Model do
   subject do
     Class.new do
       def self.validates_presence_of(*args); end
@@ -9,7 +9,7 @@ describe Clearance::User do
       def self.before_validation(*args); end
       def self.before_create(*args); end
 
-      include Clearance::User
+      include Clearance::Model
     end.new
   end
 

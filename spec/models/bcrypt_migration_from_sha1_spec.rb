@@ -33,7 +33,6 @@ describe Clearance::PasswordStrategies::BCryptMigrationFromSHA1 do
     it 'sets the pasword on the subject' do
       subject.password.should be_present
     end
-
   end
 
   describe '#authenticated?' do
@@ -86,5 +85,4 @@ describe Clearance::PasswordStrategies::BCryptMigrationFromSHA1 do
       end
     end
   end
-
 end
